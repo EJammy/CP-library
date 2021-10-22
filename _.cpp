@@ -11,7 +11,7 @@ using ll = long long;
 template<typename T>
 void print(T val) {
     cout<<val<<' ';
-}
+}aaa
 
 template<typename T1, typename... T>
 void print(T1 x, T... args) {
