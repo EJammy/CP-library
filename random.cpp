@@ -25,15 +25,6 @@ void println(T... args) {
 }
 
 template<typename T>
-vector<T> readVec(int size) {
-    vector<T> v(size);
-    for (int i = 0; i < size; i++) {
-        cin>>v[i];
-    }
-    return v;
-}
-
-template<typename T>
 void printVec(vector<T> v) {
     for (auto it: v) {
         cout<<it<<' ';
@@ -41,15 +32,24 @@ void printVec(vector<T> v) {
     cout<<'\n';
 }
 
-void pYesNo(bool x) {
-    if (x) cout<<"Yes\n"; else cout<<"No\n";
-}
+
+// mt19937 rng(time(NULL));
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+// mt19937 rng((uint64_t) new char);
+// mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
-    vector<int> a;
-    println("hello", "world", 1, 2, 3.1);
+    for (int i = 0; i < 10; i++) 
+    {
+        println(rng() % 100);
+    }
+
+    vector<int> v(10);
+    iota(v.begin(), v.end(), 0);
+	shuffle(v.begin(), v.end(), rng);
+	printVec(v);
 
     return 0;
 }
