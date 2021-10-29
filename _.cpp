@@ -10,7 +10,7 @@ using ll = long long;
 
 template<typename T>
 void print(T val) {
-    cout<<val<<' ';
+    cout<<val;
 }
 
 template<typename T1, typename... T>
