@@ -51,7 +51,7 @@ ll C(ll n, ll r)
     ll ret = fact[n]*inv(fact[r]) % MOD;
     return ret * inv(fact[n-r]) % MOD;
 }
-ll calcFact()
+void calcFact()
 {
     fact[0] = 1;
     for (int i = 1; i < S; i++)
