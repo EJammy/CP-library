@@ -34,31 +34,24 @@ void printVec(vector<T> v) {
 
 
 // mt19937 rng(time(NULL));
-mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+// mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 // mt19937 rng((uint64_t) new char);
 // mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
+mt19937 rng;
 
-int main() {
+int main(int argc, char *argv[]) {
     ios::sync_with_stdio(false);
     cin.tie(0);
-    
+
+    rng.seed(atoi(argv[1]));
+
     const int n = 10;
-    const int q = 10;
     const ll aMax = 100;
-    println(n, q);
-    for (int i = 0; i < q; i++)
-    {
-        int l = rng() % n;
-        int r = rng()%(n-l) +1+l;
-        if (rng() % 2 == 0)
-        {
-            println(0, l, r);
-        }
-        else
-        {
-            println(1, l, r, rng() % aMax);
-        }
+    println(n);
+    for (int i = 0; i < n; i++) {
+        cout << rng() % aMax << ' ';
     }
+    cout<<'\n';
 
     return 0;
 }
