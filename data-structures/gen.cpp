@@ -38,24 +38,30 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 // mt19937 rng((uint64_t) new char);
 // mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
 
-int main() {
+int main(int argc, char *argv[]) {
     ios::sync_with_stdio(false);
     cin.tie(0);
-    
-    const int n = 10;
-    const int q = 10;
-    const ll aMax = 100;
-    println(n, q);
+    rng.seed(atoi(argv[1]));
+
+    const int n = 2e5;
+    const int q = 2e5;
+    ll aMax = 1<<24;
+    vector<int> v(n);
+    for (int i = 0; i < n; i++) v[i] = rng()%aMax;
+    println(n, q, 24);
+    printVec(v);
+    aMax = 10;
+
     for (int i = 0; i < q; i++)
     {
         int l = rng() % n;
-        int r = rng()%(n-l) +1+l;
-        if (rng() % 2 == 0)
+        if (i < q-3 && rng() % 2 == 0)
         {
-            println(0, l, r);
+            println(0, l, rng() % aMax);
         }
         else
         {
+            int r = rng()%(n-l) +1+l;
             println(1, l, r, rng() % aMax);
         }
     }
