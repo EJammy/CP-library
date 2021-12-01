@@ -1,9 +1,3 @@
-/*
-alias cfast='g++ -std=c++17 -Wshadow -Wall -DLOCAL -O3'
-alias csafe='g++ -std=c++17 -Wshadow -Wall -DLOCAL -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG -g'
-
-*/
-
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
@@ -49,8 +43,44 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    vector<int> a;
-    println("hello", "world", 1, 2, 3.1);
-
+    int n, c, q;
+    cin>>n>>q>>c;
+    auto v = readVec<int>(n);
+    while (q--)
+    {
+        int qt; cin>>qt;
+        if (qt == 0)
+        {
+            int id, x; cin>>id>>x;
+            v[id] = x;
+        }
+        else
+        {
+            // printVec(v);
+            int l, r, k;
+            cin>>l>>r>>k;
+            int cur = 0;
+            int ans = 0;
+            for (int i = l; i < r; i++)
+            {
+                if (v[i] != k)
+                {
+                    cur++;
+                    ans = max(ans, cur);
+                }
+                else
+                {
+                    cur = 0;
+                }
+            }
+            cout<<ans<<'\n';
+        }
+    }
     return 0;
 }
+/*
+5 2 4
+0 0 0 1 0
+1 1 5 1
+1 0 5 1
+*/

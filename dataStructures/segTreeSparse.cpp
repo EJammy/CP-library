@@ -1,4 +1,3 @@
-#warning WA
 /*
 https://tioj.ck.tp.edu.tw/problems/1169
 */
@@ -121,7 +120,7 @@ Val query(SegT *u, int ql, int qr, int l, int r)
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
-    
+
     int n, c, q;
     cin>>n>>q>>c;
     auto v = readVec<int>(n);
@@ -146,7 +145,7 @@ int main() {
         {
             int l, r, k;
             cin>>l>>r>>k;
-            if (head[k] == NULL) cout<<n<<'\n';
+            if (head[k] == NULL) cout<<(r-l)<<'\n';
             else
                 cout<<query(head[k], l, r, 0, n).v<<'\n';
             // cout<<"====\n";
