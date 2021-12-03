@@ -10,35 +10,35 @@ using ll = long long;
 
 template<typename T>
 vector<T> readVec(int size) {
-    vector<T> v(size);
-    for (int i = 0; i < size; i++) {
-        cin>>v[i];
-    }
-    return v;
+	vector<T> v(size);
+	for (int i = 0; i < size; i++) {
+		cin>>v[i];
+	}
+	return v;
 }
 
 template<typename T>
 void printVec(vector<T> v) {
-    for (auto it: v) {
-        cout<<it<<' ';
-    }
-    cout<<'\n';
+	for (auto it: v) {
+		cout<<it<<' ';
+	}
+	cout<<'\n';
 }
 
 void pYesNo(bool x) {
-    if (x) cout<<"Yes\n"; else cout<<"No\n";
+	if (x) cout<<"Yes\n"; else cout<<"No\n";
 }
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(0);
+	ios::sync_with_stdio(false);
+	cin.tie(0);
 
-    int t; cin>>t;
-    while (t--) {
-        int n;
-        cin>>n;
-        auto v = readVec<ll>(n);
-    }
+	int t; cin>>t;
+	while (t--) {
+		int n;
+		cin>>n;
+		auto v = readVec<ll>(n);
+	}
 
-    return 0;
+	return 0;
 }
