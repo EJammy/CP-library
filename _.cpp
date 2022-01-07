@@ -2,6 +2,9 @@
 using namespace std;
 using ll = long long;
 using vll = vector<ll>;
+using vi = vector<int>;
+using vvi = vector<vector<int>>;
+using vvl = vector<vector<ll>>;
 
 int main() {
 	ios::sync_with_stdio(false);
