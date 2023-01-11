@@ -42,10 +42,11 @@ vector<ll> pfact(ll x)
 	for (auto p: primes)
 	{
 		if (x % p == 0) ret.push_back(p);
-		while (x % p == 0)
+		while (x % p == 0)
 		{
 			x /= p;
 		}
+		if (p*p > x) break;
 	}
 	if (x != 1) ret.push_back(x);
 	return ret;
